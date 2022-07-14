@@ -1,9 +1,32 @@
 const username = document.getElementById("username");
 const saveScoreBtn = document.getElementById("save-score");
 const mostRecentScore = localStorage.getItem("mostRecentScore");
-//oder highscore? 
+
+//oder highscore? Was macht einen Highscore aus?
+//const highStore = localStorage.getItem("highScore");
 //console.log(mostRecentScore);
 finalScore.innerText = mostRecentScore;
+
+localStorage.setItem("mostRecentScore", JSON .stringify(score));
+saveHighScore(HighScore);
+//console.log(JSON.parse(localStorage.getItem("highscores")));
+
+const score = {
+    score: mostRecentScore,
+    name: username.value
+};   
+
+HighScore.push(score);
+console.log(HighScore);
+
+// Scores vergleichen?
+highScores.sort = function(compare) {
+    return compare(a.score, b.score);
+    };
+
+// Wie nehme ich nur die besten 3?
+//const MAX_HIGHSCORES = 3;
+highScores.splice(3);
 
 saveScoreBtn.disabled = !username.value;
 
@@ -14,20 +37,16 @@ saveScoreBtn.disabled = !username.value;
     } else {
         localStorage.setItem("username", username);
         window.location.href = "end.html";
-    }
-
+// sinnvoll mit einem Listener?
 */
+
 }
 );
-
-
 
 username.addEventListener("keyup", function(event) {
 });
 
-
-getiId 
-
+//Wenn der Username leer ist, dann ist der Button disabled
 //console.log(username.value);));
 
 saveHighscore = function(score) {
