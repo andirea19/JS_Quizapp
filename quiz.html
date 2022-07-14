@@ -7,30 +7,36 @@
     <title>Quiz Start</title>
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="quiz.css">
-    <link rel="stylesheet" href="css/font-awesome.min.css">
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div id="quiz" class="justify-center">
-            <h2 id="frage">Frage 1</h2>
+        <div id="quiz" class="justify-center flex-column">
+
+            <div id="header" class="quiz-header">
+                <p class="header-prefix">Quizfragen</p>
+                <h1 class="header-main" id="questionCounter">Frage 1</h1>
+            </div>
+
+            <div id="header" class="quiz-header">
+                <p class="header-prefix">Punkte</p>
+                <h1 class="header-main" id="score">0</h1>
+            </div>
+
+            <h2 id="question">Frage 1</h2>
             <div class="choice-container">
-                <p class="choice-pre" id="antwort">Antwort</p>
-                <p class="choice-text" id="antwort">Antwort 1</p>
+                <p class="choice-prefix">Antwort</p>
                 <p class="choice-text" data-number="1">Antwort 1</p>
             </div>
             <div class="choice-container">
-                <p class="choice-pre" id="antwort">Antwort</p>
-                <p class="choice-text" id="antwort">Antwort 2</p>
+                <p class="choice-prefix">Antwort</p>
                 <p class="choice-text" data-number="2">Antwort 2</p>
             </div>
             <div class="choice-container">
-                <p class="choice-pre" id="antwort">Antwort</p>
-                <p class="choice-text" id="antwort">Antwort 3</p>
+                <p class="choice-prefix">Antwort</p>
                 <p class="choice-text" data-number="3">Antwort 3</p>
             </div>
             <div class="choice-container">
-                <p class="choice-pre" id="antwort">Antwort</p>
-                <p class="choice-text" id="antwort">Antwort 4</p>
+                <p class="choice-prefix">Antwort</p>
                 <p class="choice-text" data-number="4">Antwort 4</p>
             </div>
         </div>

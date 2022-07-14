@@ -9,6 +9,8 @@ const choices = getElementsByClassName("choice-text");
 //const scoreText = document.getElementById("score");
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
+const questionCounterText = document.getElementById("question-counter");
+const scoreText = document.getElementById("score");
 
 let currentQuestion = {};
 let acceptingAnswers = true;
@@ -53,7 +55,7 @@ startQuiz = () => {
     availableQuestions = [...questions];
 //console.log(availableQuestions);
     getNewQuestion();
-},
+};
 
 getNewQuestion = () => {
 
@@ -63,6 +65,8 @@ getNewQuestion = () => {
     }
 
     questionCounter++;
+    questionCounterText.innerText = "Frage " + questionCounter + " von " + MAX_QUESTIONS;
+    
 //random Frage aus dem Pool - floor ist die basis - length verändert sich
     const questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
@@ -102,9 +106,10 @@ choices.forEach(choice => {
         const classToApply = "incorrect";
         if (selectedAnswer == currentQuestion.Answer) 
             classToApply === "correct") {   //Richtige Antwort oder falsch?
+                if (classToApply === "correct") {incrementScore(CORRECT_BONUS);
 
                 selectedChoice.parentElement.classList.add(classToApply);
-                incrementScore(CORRECT_BONUS);
+//                incrementScore(CORRECT_BONUS); Vorher oder nachher?
         }
 //Terinär       const classToApply = selectedAnswer == currentQuestion.Answer ? "correct" : "incorrect";
         console.log(classToApply);
@@ -116,5 +121,8 @@ choices.forEach(choice => {
     });
 });
 
+incrementScore = num => { score += num;
+    scoreText.innerText = score;
+}
 
 startQuiz();
