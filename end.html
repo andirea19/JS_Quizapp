@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Ende</title>
+    <link rel="stylesheet" href="app.css">
+    <link rel="stylesheet" href="quiz.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1>Gut Gemacht!</h1>
+            <p id="finalScore">Dein Ergebnis: 
+ <!--- Score speichern und teilen
+    als PHP?              <?php echo $score; ?> von <?php echo $total; ?> Fragen richtig beantwortet</p> -->
+             <form>
+                <input
+                    type="text"
+                    name="username"
+                    id="saveScore"
+                    placeholder="username"
+                    onclick="saveHighscore(event)"
+                    disabled
+                    >
+                 />  
+<!-- disabled, damit nicht angeklickt wird -->
+                 <button type="submit" class="btn" id="SaveScoreBtn">Ergebnis teilen 
+            </button>
+                </form> 
+                
+<!-- Nochmal spielen
+            <button type="button" class="btn" id="playAgain">Nochmal spielen</button> -->
+            <a class="btn" href="quiz.html"> Nochchmal spielen </a>
+            <a class="btn" href="/">Zurück</a>
+
+            </div>
+        </div>
+    <div class="container">
+        <a href="index.html">Zurück zur Startseite</a>
+    </div>
+    <script src="end.js"></script>
+</body>
+</html>

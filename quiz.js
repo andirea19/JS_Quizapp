@@ -5,8 +5,8 @@ const choices = getElementsByClassName("choice-text");
 
 //console.log(choices);
 
-//const progressText = document.getElementById("progress-text");
-//const scoreText = document.getElementById("score");
+//Damit nicht doppelt: const progress = document.getElementById("progress-text");
+//const score = document.getElementById("score");
 const CORRECT_BONUS = 10;
 const MAX_QUESTIONS = 3;
 const questionCounterText = document.getElementById("question-counter");
@@ -16,10 +16,19 @@ let currentQuestion = {};
 let acceptingAnswers = true;
 let score = 0;
 let questionCounter = 0;
-// Kopie von fullQuestions Array
+// Kopie von fullQuestions Array zum Bearbeiten
 let availableQuestions = [];
 
 let questions = [
+    {
+        question: "Wie heißt der Hauptstadt von Vorarlberg?",
+        choice1: "Dornbirn",
+        choice2: "Bregenz",
+        choice3: "Vorarlberg-Stadt",
+        choice4: "Triesen",
+//        correctAnswer: "Bregenz"
+        Answer: 2
+    },
     {
         question: "Wie heißt der Hauptstadt von Frankreich?",
         choice1: "Paris",
@@ -60,7 +69,7 @@ startQuiz = () => {
 getNewQuestion = () => {
 
     if (availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS) {
-        //ende vom quiz
+        //Ende vom quiz
         return window.location.assign("end.html");
     }
 
@@ -105,19 +114,23 @@ choices.forEach(choice => {
  //Klassen Flasch/Wahr
         const classToApply = "incorrect";
         if (selectedAnswer == currentQuestion.Answer) 
-            classToApply === "correct") {   //Richtige Antwort oder falsch?
+            classToApply === "correct") {  
+                //Richtige Antwort oder falsch? - Auswahl auf Score
                 if (classToApply === "correct") {incrementScore(CORRECT_BONUS);
 
                 selectedChoice.parentElement.classList.add(classToApply);
-//                incrementScore(CORRECT_BONUS); Vorher oder nachher?
+//  incrementScore(CORRECT_BONUS); Vorher oder nachher?
         }
-//Terinär       const classToApply = selectedAnswer == currentQuestion.Answer ? "correct" : "incorrect";
+//Terinär?       const classToApply = selectedAnswer === currentQuestion.Answer ? "correct" : "incorrect";
         console.log(classToApply);
         setTimeout(() => {
             selectedChoice.parentElement.classList.remove(classToApply);
         } , 100);
 
-        getNewQuestion();
+        getNewQuestion() => {
+            if (availableQuestions.length === 0) {
+                local Storage.setItem("mostRecentScore", score);
+//                return window.location.assign("end.html");
     });
 });
 
