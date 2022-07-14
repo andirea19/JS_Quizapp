@@ -9,9 +9,10 @@ const highScores = JSON.parse(localStorage.getItem('highscores')) || [];
 highScoresList.innerHTML = 'Highscores:<br>'.HighScores;
 
 highScores.map(score => {
-    console.log( '<li class="list-group-item">' + score.name + ': ' + score.score + '</li>');
+    return( '<li class="list-group-item">' + score.name + ': ' + score.score + '</li>');
 // map zum Umwandeln in eine Liste
 //    highScoreList.innerHTML += '<li class="list-group-item">' + score.name + ': ' + score.score + '</li>';
-    .join('');
-}
-);
+})    
+.join('');
+
+//TO-DO Datenbank einbinden als Speicherplatz für Highscores
