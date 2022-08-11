@@ -1,2 +1,4 @@
 # JS_Quizapp
-A quiz app
+A quiz app made with HTML and JS
+AJAX requests
+Local storage and db 
